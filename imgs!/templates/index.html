@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imgs!</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/reset.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/static/main.js"></script>
+</head>
+<body>
+    <div class="header">
+        <h1 id="header_cats">Imgs!</h1>
+        <div class="buttons_header">
+            <button id="log">Войти</button>
+            <button id="log_reg" type="button">Вход/Регистрация</button>
+            <button id="reg">Регистрация</button>
+        </div>
+        <img src="/static/user_image_1.png" id="user_img_header" alt="">
+        <p id="nickname_header">Nickname</p>
+    </div>
+    <div id="register">
+        <img src="/static/back_img.png" class="exit_button" id="exit_reg"></img>
+        <h1 id="title_reg">Регистрация</h1>
+        <form id="reg_form">
+            <input type="text" id="nickname_input" name="nickname" placeholder="Имя">
+            <input type="email" id="email_input" name="email" placeholder="Почта">
+            <input type="password" id="password_input" name="password" placeholder="Пароль">
+            <input type="password" id="accept_password_input" name="accept_password" placeholder="Подтвертдить пароль">
+            <p id="error_reg"></p>
+            <button id="reg_button" type="submit">Зарегистрироваться</button>
+        </form>
+        <p id="else_variant">Есть аккаунт? <a id="log_button_in_reg">Войти</a></p>
+    </div>
+    <div class="confirm_email">
+        <img src="/static/back_img.png" class="exit_button" id="exit_comfirm"></img>
+        <p id="title_confirm_email">Подтверждение почты</p>
+        <p id="subtitle_confirm_email">Мы выслали письмо с кодом на вашу почту</p>
+        <input type="text" name="email_code" id="email_code" placeholder="Код">
+        <p id="confirm_error"></p>
+        <button id="confirm_button" type="submit">Подтвердить почту</button>
+    </div>
+    <div id="login">
+        <img src="/static/back_img.png" class="exit_button" id="exit_log"></img>
+        <h1 id="title_log">Вход</h1>
+        <form id="log_form">
+            <input type="text" id="nickname_input_login" name="nickname_log" placeholder="Имя">
+            <input type="password" id="password_input_login" name="password_log" placeholder="Пароль">
+            <p id="error_log"></p>
+            <button id="log_button" type="submit">Войти</button>
+        </form>
+        <p id="else_variant">Нет аккаунта? <a id="log_button_in_reg">Регистрация</a></p>
+    </div>
+    <div class="user_stats">
+        <div class="img_nickname">
+            <img src="/static/user_image_1.png" id="user_img_stats" alt="">
+            <p id="nickname_stats">data</p>
+        </div>
+        <div class="email_stats_div"><p id="email_stats">Почта: <p id="email_data">data</p></p></div>
+        <button id="exit_from_acc">Выйти из аккаунта</button>
+        <button id="open_add_picture">Добавить картинку</button>
+        <button class="generator_open" id="open_generate_from_stat">Сгенерировать картинку</button>
+        <button id="close_stats">Закрыть</button>
+    </div>
+    <div class="add_picture">
+        <img src="/static/back_img.png" class="exit_button" id="exit_add_picture"></img>
+        <p id="title_add_picture">Добавить картинку</p>
+        <p id="subtitle_add_picture">Добавте свою картинку!</p>
+        <form id="get_form" enctype="multipart/form-data">
+            <input id="get_img" name="get_file" type="file">
+            <input type="text" id="discribe_picture" name="discribe_picture" placeholder="Описание">
+            <p id="error_add"></p>
+            <button id="send_img" type="submit">Отправить картинку</button>
+        </form>
+        <p id="or_generate">или</p>
+        <button class="generator_open" id="open_generate_from_add">Сгенерировать картинку</button>
+    </div>
+
+    <div class="generate_pic">
+        <div class="child_generate_pic">
+            <div class="show_generate_img">
+                <p id="generate_notice">Здесь будет сгенерированная картинка</p>
+                <img src="" alt="" id="generate_img">
+            </div>
+            <div class="generate_form">
+                <img src="/static/back_img.png" class="exit_button" id="exit_generate"></img>
+                <p id="title_generate">Генерация картинки</p>
+                <p id="subtitle_generate">Сгенерируйте изображение с помощью ИИ, описав то что хотите получить</p>
+                <input type="text" placeholder="Описание" id="generate_input" name="generate_img">
+                <p id="generating">Идет генерация...</p>
+                <button id="generate_img_button">Сгенерировать</button>
+                <button id="commit_img_button">Опубликовать</button>
+                <p id="successful_generate">Успешно!</p>
+            </div>
+        </div>
+    </div>
+    <div class="current_picture">
+            <img id="close_main_picture" src="/static/close_button.png" alt="">
+            <img id="huge_size" src="" alt="">
+            <div id="info_img">
+                <p id="discribe_text">Text</p>
+                <div class="likes_comments">
+                    <div class="like">
+                        <img id="like_img" src="/static/empty_like.png" alt="">
+                        <p id="count_likes">0</p>
+                    </div>
+                    <div class="comments">
+                        <img id="comment_img" src="/static/comment.png" alt="">
+                        <p class="count_comments">0</p>
+                    </div>
+                </div>
+                <div id="comment_line"></div>
+                <div id="comments_title"><p class="count_comments">0</p> комментариев</div>
+                
+
+
+                <input type="text" id="comment_input" name="comment_text" placeholder="Оставте комментарий">
+                <button  id="paste_comment">Оставить комментарий</button>
+         
+
+
+                <div class="all_comments">
+                    <!-- <div class="comment">
+                        <img id="comment_user" src="/static/user_image_1.png" alt="">
+                        <p id="comment_nickname">Nickname</p>
+                        <p id="comment_date">Date</p>
+                    </div>
+                    <div class="comment_text">
+                        <p id="comment_text">Text</p>
+                    </div> -->
+                </div>
+            </div>
+    </div>
+    <div class="warning">
+        <div class="warning_container">
+            <div class="text_exit_warning">
+                <h1 id="warning_text">Что бы открыть доступ к расширенным действиям на сайте зарегистрируйтесь или войдите в аккаунт.</h1>
+                <button id="exit_warning">Вернуться на главную</button>
+            </div>
+            <img id="sad_warning" src="/static/sad.png" alt="">
+            
+        </div>
+    </div>
+    <main>
+        <div class="pictures">
+            <!-- <img id="title_picture" class="picture" src="/static/main_picture.jpg" alt=""> -->
+            
+        </div>
+        
+    </main>
+</body>
+</html>

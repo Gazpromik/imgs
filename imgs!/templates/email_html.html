@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подтверждение почты</title>
+    <style>
+        * {
+            color: #ffffff;
+        }
+        .message {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: solid #000012;
+            border-radius: 15px;
+            max-width: 100%;
+            background-color: #000000;
+        }
+        .message_content {
+            position: relative;
+            top: 15%;
+            transform: translateY(-15%);
+            max-width: 100%;
+        }
+        .title {
+            position: relative;
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+        }
+        #warning_notice {
+            position: relative;
+            width: 400px;
+            font-size: 18px;
+            left: 40px;
+        }
+        .code_container {
+            position: absolute;
+            width: 200px;
+            height: 80px;
+            border: solid #cbcbcb;
+            top: 175px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        #code {
+            font-size: 24px;
+            text-align: center;
+        }
+        @media(max-width: 500px) {
+            #warning_notice {
+                max-width: 320px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="message">
+        <div class="message_content">
+            <p class="title" style="font-size:32px; font-weight:700; text-align:center;">Подтверждение почты</p>
+            <p id="warning_notice">Не сообщайте код посторонним лицам! Если вы не запрашивали код, то просто проигнорируйте данное письмо.</p>
+            <div class="code_container">
+                <p id="code">{{email_code}}</p>
+            </div>
+        </div>
+    </div>
+    
+
+</body>
+</html>
